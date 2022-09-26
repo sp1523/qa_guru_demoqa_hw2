@@ -45,6 +45,5 @@ public class DemoQaHw {
         $("#stateCity-wrapper").$(byText("Lucknow")).click();
         $("#submit").click();
 
-
     }
 }
