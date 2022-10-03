@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
+import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -44,6 +45,12 @@ public class DemoQaHw {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Lucknow")).click();
         $("#submit").click();
+
+        $(".modal-dialog").should(appear);
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive table").shouldHave(text("Egor"), text("Egorov"),text("Male"),text("Egor@egor.com"),text("0123456789"), text("Maths"));
+        $(".table-responsive table").$(byText("Date of Birth")).parent().shouldHave(text("30 June,1972"));
+
 
     }
 }
